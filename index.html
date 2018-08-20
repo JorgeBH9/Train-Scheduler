@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../HW-7/assets/css/style.css">
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+    <!-- Added Moment JS -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Added my own script JS -->
+    <script src="../assets/javascript/script.js"></script>
+    <title>Train HW JBH</title>
+</head>
+
+<body>
+    <!--This is the title to welcome the user of a Trains Page-->
+    <div class="container jumbotron">
+        <div class="row">
+            <div class="column">
+                <h1>Anytime is Train Time ! 🚄</h1>
+            </div>
+        </div>
+    </div>
+    <!--This is the table to display results at the middle of the page to see schedules of a Train-->
+    <div class="container">
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <h3>Current Train Schedule 🚄</h3>
+                    <tr>
+                        <th scope="col">Train name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody id="trainData">
+                    <!--This is what we display dinamically according to the firebase data we get-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!--This is the form at the bottom of the page to add a Train-->
+    <div class="container jumbotron">
+        <form id="newTrainSumbission">
+            <h3>Add Train ! ➕ 🚄</h3>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Train Name</label>
+                <input type="text" class="form-control" id="trainName" placeholder="Give a train name">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Destination</label>
+                <input type="text" class="form-control" id="destination" placeholder="Give a destination">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">First Train Time (HH:mm - military time)</label>
+                <input type="text" class="form-control" id="firstTrainTime" placeholder="Input the time as specified above">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequency" placeholder="Input the time as specified above">
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitbtn">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
